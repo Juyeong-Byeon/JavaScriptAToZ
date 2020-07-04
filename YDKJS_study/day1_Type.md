@@ -31,7 +31,23 @@ ECMAScript 프로그래머가 언어를 이용하여 직접 조작하는 값들�
     typeof null==="object"//true????????
 ```
 
-null은 falsy 한 유일한 원시값이면서 타입은 object인 특이한 값이다.
+~~null은 falsy 한 유일한 원시값이면서 타입은 object인 특이한 값이다.~~
+
+
+인줄 알았지만 MDN에선 falsy 한 값을 다음과 같이 정의 하고 있다. 
+
+|값|설명|
+|--|--|
+| false |	키워드 false |
+| 0 |	숫자 zero |
+|-0 |	음수 zero |
+|0n	| BigInt. 불리언으로 사용될 경우, 숫자와 같은 규칙을 따름. 0n은 거짓 같은 값. |
+| "" |	빈 string |
+| null |	null - 아무런 값도 없음 |
+| undefined |	undefined - 원시값 |
+| NaN	| NaN - 숫자가 아님 |
+
+이 표를 보면 undefined도 falsy한 값이지만 원시값임을 알 수 있다. 
 
 ```js
 typeof function foo(){}==="function"//true;
@@ -150,7 +166,6 @@ function doSomethingCool(){
 
     let val=helper();
 }
-```
-이 또한 위의 typeof를 사용하는 것과 같이 
+
 
 
