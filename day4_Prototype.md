@@ -84,6 +84,23 @@ foo2.__proto__
 여기서 한가지 더 볼점은 __proto__는 자신이 상속 받은 객체의 prototype object이다. 위의 참조가 가능하게 하는 이유는 이 객체 때문이다. 
 js에서 객체 내에 선언되어있는 객체가 존재 하지 않으면 __proto__를 타고 올라가 상위에서 찾아내고, 최 상위인 object에도 없으면 에러를 일으킨다 이것을 prototype link라고 한다. 
 
+예를 들어 이를 통해 Array가 Object를 상속 받았음을 증명할 수 있다. 
+
+```js
+let arr=[];
+arr.__proto__;//arr의 prototype는 Array()정의시에 생성된 Array.prototype()
+/*Array에서 지원하는 많은 메서드들
+concat: ƒ concat()
+constructor: ƒ Array()
+copyWithin: ƒ copyWithin()
+entries: ƒ entries()
+...
+..
+.
+
+__proto__: Object //이 Array.__proto__ 를 보면 Array 또한 Object로 부터 상속받아 생성되었음을 알 수 있다. 
+*/
+```
 
 
 
